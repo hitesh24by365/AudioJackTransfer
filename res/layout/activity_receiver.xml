@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/Text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Tic-Tac-Toe App v87" />
+
+    <TableLayout
+        android:id="@+id/TableLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START/STOP" >
+            </Button>
+
+            <RadioButton
+                android:id="@+id/RadioButton01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="" >
+            </RadioButton>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEVELOPMENT OPTIONS" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter number [0-31]" >
+    </TextView>
+
+    <TableLayout
+        android:id="@+id/TableLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/NumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:width="15mm" >
+            </EditText>
+
+            <Button
+                android:id="@+id/SendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2ARDUINO" >
+            </Button>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/NumberText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:width="15mm" >
+            </EditText>
+
+            <Button
+                android:id="@+id/SendButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2SERVER" >
+            </Button>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/DebugText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" >
+    </TextView>
+
+</LinearLayout>

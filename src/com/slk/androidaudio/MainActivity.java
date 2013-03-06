@@ -3,8 +3,6 @@ package com.slk.androidaudio;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,17 +13,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_main);
-		
-		Handler handler = new Handler(){
-			@Override
-			public void handleMessage(Message msg) {
-				super.handleMessage(msg);
-		//		editTextTotal.setText("Total amount");
-			}
-		};
-		
-		handler.sendEmptyMessage(0);
+		setContentView(R.layout.activity_main);		
 
 		((Button) findViewById(R.id.buttonSender))
 				.setOnClickListener(new OnClickListener() {

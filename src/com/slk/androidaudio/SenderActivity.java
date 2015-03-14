@@ -9,7 +9,6 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -51,12 +50,12 @@ public class SenderActivity extends Activity {
 		// audio initialization
 		int AUDIO_BUFFER_SIZE = 4096;
 		int minBufferSize = AudioTrack.getMinBufferSize(AUDIO_SAMPLE_FREQ,
-				AudioFormat.CHANNEL_CONFIGURATION_MONO,
+				AudioFormat.CHANNEL_OUT_MONO,
 				AudioFormat.ENCODING_PCM_16BIT);
 		if (AUDIO_BUFFER_SIZE < minBufferSize)
 			AUDIO_BUFFER_SIZE = minBufferSize;
 		AudioTrack aT = new AudioTrack(AudioManager.STREAM_MUSIC,
-				AUDIO_SAMPLE_FREQ, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+				AUDIO_SAMPLE_FREQ, AudioFormat.CHANNEL_OUT_MONO,
 				AudioFormat.ENCODING_PCM_16BIT, AUDIO_BUFFER_SIZE,
 				AudioTrack.MODE_STREAM);
 		aT.play();

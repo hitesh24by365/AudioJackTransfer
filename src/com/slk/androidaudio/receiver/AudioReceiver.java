@@ -119,7 +119,7 @@ public class AudioReceiver {
 				this.sendMessage(ARDUINO_PROTOCOL_ACK);
 				break;
 			}
-
+			if(value!=31)
 			this.mActivity.showDebugMessage("ARD: " + value, false);
 			debugInfo("tic-tac-toe:messageReceived() from arduino value="
 					+ value);

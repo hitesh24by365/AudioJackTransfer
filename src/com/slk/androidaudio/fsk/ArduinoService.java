@@ -16,9 +16,6 @@
 
 package com.slk.androidaudio.fsk;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.AudioTrack;
@@ -28,7 +25,7 @@ import android.util.Log;
 
 public class ArduinoService implements Runnable {
 	private static boolean isLogging = true;
-	private static final int EMULATOR_SAMPLE_FREQ = 8000; // emulator sample
+	private static final int EMULATOR_SAMPLE_FREQ = 44100; // emulator sample
 															// freq 8000Hz
 	private static final int GT540_SAMPLE_FREQ = 44100; // LG GT540
 	private static final int AUDIO_SAMPLE_FREQ = GT540_SAMPLE_FREQ;
@@ -72,7 +69,7 @@ public class ArduinoService implements Runnable {
 		int AUDIO_BUFFER_SIZE = ACQ_AUDIO_BUFFER_SIZE; // 44000;//200000;//
 														// 16000;
 		int minBufferSize = AudioTrack.getMinBufferSize(AUDIO_SAMPLE_FREQ,
-				AudioFormat.CHANNEL_CONFIGURATION_MONO,
+				AudioFormat.CHANNEL_IN_MONO,
 				AudioFormat.ENCODING_PCM_16BIT);
 		if (AUDIO_BUFFER_SIZE < minBufferSize)
 			AUDIO_BUFFER_SIZE = minBufferSize;
@@ -81,7 +78,7 @@ public class ArduinoService implements Runnable {
 		byte[] audioData = new byte[AUDIO_BUFFER_SIZE];
 
 		AudioRecord aR = new AudioRecord(MediaRecorder.AudioSource.MIC,
-				AUDIO_SAMPLE_FREQ, 2, AudioFormat.ENCODING_PCM_16BIT,
+				AUDIO_SAMPLE_FREQ,AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT,
 				AUDIO_BUFFER_SIZE);
 
 		// audio recording
